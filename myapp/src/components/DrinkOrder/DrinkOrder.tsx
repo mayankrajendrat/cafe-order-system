@@ -61,31 +61,31 @@ const DrinkOrder: React.FC = () => {
         <Card>
             <Card.Body className='menu-wrapper'>
                 <div className='item-list'>
-                    <Button className='menu-item' variant="light" onClick={() => handleOrder('coffee')}>
+                    <Button id="coffee" className='menu-item' variant="light" onClick={() => handleOrder('coffee')}>
                         <span className='item-name left-align'>Coffee</span>
                         <span className='item-name right-align'>480 Yen</span>
                         <Badge className='item-quantity' bg="danger">{counts.coffee}</Badge>
                     </Button>
 
-                    <Button className='menu-item' variant="light" onClick={() => handleOrder('tea')}>
+                    <Button id="tea" className='menu-item' variant="light" onClick={() => handleOrder('tea')}>
                         <span className='item-name left-align'>Tea</span>
                         <span className='item-name right-align'>280 Yen</span>
                         <Badge className='item-quantity' bg="danger">{counts.tea}</Badge>
                     </Button>
 
-                    <Button className='menu-item' variant="light" onClick={() => handleOrder('milk')}>
+                    <Button id="milk" className='menu-item' variant="light" onClick={() => handleOrder('milk')}>
                         <span className='item-name left-align'>Milk</span>
                         <span className='item-name right-align'>180 Yen</span>
                         <Badge className='item-quantity' bg="danger">{counts.milk}</Badge>
                     </Button>
 
-                    <Button className='menu-item' variant="light" onClick={() => handleOrder('coke')}>
+                    <Button id="coke" className='menu-item' variant="light" onClick={() => handleOrder('coke')}>
                         <span className='item-name left-align'>Coke</span>
                         <span className='item-name right-align'>190 Yen</span>
                         <Badge className='item-quantity' bg="danger">{counts.coke}</Badge>
                     </Button>
 
-                    <Button className='menu-item' variant="light" onClick={() => handleOrder('beer')}>
+                    <Button id="beer" className='menu-item' variant="light" onClick={() => handleOrder('beer')}>
                         <span className='item-name left-align'>Beer</span>
                         <span className='item-name right-align'>580 Yen</span>
                         <Badge className='item-quantity' bg="danger">{counts.beer}</Badge>
@@ -96,9 +96,9 @@ const DrinkOrder: React.FC = () => {
                     <Card style={{ width: '18rem' }} className="text-center">
                         <Card.Header>Your Bill</Card.Header>
                         <Card.Body>
-                            <Card.Title>Items Ordered: {totalCount}</Card.Title>
+                            <Card.Title>Items Ordered: <span id="count">{totalCount}</span></Card.Title>
                             <Card.Text>
-                                Total Price: {totalPrice} Yen
+                                Total Price: <span id="price">{totalPrice} Yen</span>
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer className="text-muted">
