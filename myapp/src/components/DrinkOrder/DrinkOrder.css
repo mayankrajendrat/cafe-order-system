@@ -1,4 +1,7 @@
 
+.drinkorder-wrapper {
+    border: none;
+}
 .menu-wrapper {
     display: flex;
     justify-content: space-between;
