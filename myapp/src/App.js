@@ -1,4 +1,4 @@
-import DrinkOrder from './components/DrinkOrder/DrinkOrder'
+import DrinkOrder from './components/DrinkOrder/DrinkOrder';
 import './App.css';
 
 function App() {

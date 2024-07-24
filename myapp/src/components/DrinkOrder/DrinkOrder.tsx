@@ -4,20 +4,29 @@ import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const DrinkOrder = () => {
+// Define types for drink counts and prices
+interface DrinkCounts {
+    coffee: number;
+    tea: number;
+    milk: number;
+    coke: number;
+    beer: number;
+}
+
+const DrinkOrder: React.FC = () => {
     // Initialize state for counters and total price
-    const [counts, setCounts] = useState({
+    const [counts, setCounts] = useState<DrinkCounts>({
         coffee: 0,
         tea: 0,
         milk: 0,
         coke: 0,
         beer: 0
     });
-    const [totalCount, setTotalCount] = useState(0);
-    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalCount, setTotalCount] = useState<number>(0);
+    const [totalPrice, setTotalPrice] = useState<number>(0);
 
     // Prices of the drinks
-    const prices = {
+    const prices: { [key: string]: number } = {
         coffee: 480,
         tea: 280,
         milk: 180,
@@ -26,7 +35,7 @@ const DrinkOrder = () => {
     };
 
     // Handler function to update the counters and total
-    const handleOrder = (drink) => {
+    const handleOrder = (drink: keyof DrinkCounts): void => {
         setCounts((prevCounts) => ({
             ...prevCounts,
             [drink]: prevCounts[drink] + 1
@@ -36,7 +45,7 @@ const DrinkOrder = () => {
     };
 
     // Handler function to clear the orders
-    const handleClear = () => {
+    const handleClear = (): void => {
         setCounts({
             coffee: 0,
             tea: 0,
@@ -49,7 +58,7 @@ const DrinkOrder = () => {
     };
 
     return (
-        <Card className='drinkorder-wrapper'>
+        <Card>
             <Card.Body className='menu-wrapper'>
                 <div className='item-list'>
                     <Button className='menu-item' variant="light" onClick={() => handleOrder('coffee')}>
@@ -87,15 +96,9 @@ const DrinkOrder = () => {
                     <Card style={{ width: '18rem' }} className="text-center">
                         <Card.Header>Your Bill</Card.Header>
                         <Card.Body>
-                            <Card.Title>
-                                <span>
-                                    Items Ordered: {totalCount}
-                                </span>
-                            </Card.Title>
+                            <Card.Title>Items Ordered: {totalCount}</Card.Title>
                             <Card.Text>
-                                <span>
-                                    Total Price: {totalPrice} Yen
-                                </span>
+                                Total Price: {totalPrice} Yen
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer className="text-muted">
