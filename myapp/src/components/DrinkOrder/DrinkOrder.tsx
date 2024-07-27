@@ -64,31 +64,31 @@ const DrinkOrder: React.FC = () => {
                     <Button id="coffee" className='menu-item' variant="light" onClick={() => handleOrder('coffee')}>
                         <span className='item-name left-align'>Coffee</span>
                         <span className='item-name right-align'>480 Yen</span>
-                        <Badge className='item-quantity' bg="danger">{counts.coffee}</Badge>
+                        <div id="coffee-count" className='item-quantity badge bg-danger'>{counts.coffee}</div>
                     </Button>
 
                     <Button id="tea" className='menu-item' variant="light" onClick={() => handleOrder('tea')}>
                         <span className='item-name left-align'>Tea</span>
                         <span className='item-name right-align'>280 Yen</span>
-                        <Badge className='item-quantity' bg="danger">{counts.tea}</Badge>
+                        <div id="tea-count" className='item-quantity badge bg-danger'>{counts.tea}</div>
                     </Button>
 
                     <Button id="milk" className='menu-item' variant="light" onClick={() => handleOrder('milk')}>
                         <span className='item-name left-align'>Milk</span>
                         <span className='item-name right-align'>180 Yen</span>
-                        <Badge className='item-quantity' bg="danger">{counts.milk}</Badge>
+                        <div id="milk-count" className='item-quantity badge bg-danger'>{counts.milk}</div>
                     </Button>
 
                     <Button id="coke" className='menu-item' variant="light" onClick={() => handleOrder('coke')}>
                         <span className='item-name left-align'>Coke</span>
                         <span className='item-name right-align'>190 Yen</span>
-                        <Badge className='item-quantity' bg="danger">{counts.coke}</Badge>
+                        <div id="coke-count" className='item-quantity badge bg-danger'>{counts.coke}</div>
                     </Button>
 
                     <Button id="beer" className='menu-item' variant="light" onClick={() => handleOrder('beer')}>
                         <span className='item-name left-align'>Beer</span>
                         <span className='item-name right-align'>580 Yen</span>
-                        <Badge className='item-quantity' bg="danger">{counts.beer}</Badge>
+                        <div id="beer-count" className='item-quantity badge bg-danger'>{counts.beer}</div>
                     </Button>
                 </div>
 
@@ -98,7 +98,7 @@ const DrinkOrder: React.FC = () => {
                         <Card.Body>
                             <Card.Title>Items Ordered: <span id="count">{totalCount}</span></Card.Title>
                             <Card.Text>
-                                Total Price: <span id="price">{totalPrice} Yen</span>
+                                Total Price: <span id="price">{totalPrice}</span> Yen
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer className="text-muted">
