@@ -1,0 +1,51 @@
+
+.drinkorder-wrapper {
+    border: none;
+}
+.menu-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+  }
+  
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 300px; 
+  }
+  
+  .left-align {
+    margin-right: auto;
+  }
+  
+  .right-align {
+    margin-left: auto;
+  }
+  
+  .menu-item .badge {
+    position: relative;
+    top: -20px;
+    right: -20px;
+  }
+  
+  .item-list button {
+    border: 1px solid black;
+  }
+  
+  .bill-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .bill-wrapper .card {
+    -webkit-box-shadow: 4px 6px 28px -4px rgba(107,101,107,1);
+  -moz-box-shadow: 4px 6px 28px -4px rgba(107,101,107,1);
+  box-shadow: 4px 6px 28px -4px rgba(107,101,107,1);
+  }
